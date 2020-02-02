@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Foreground
+  - Broken
+  - Spell
+  - DetectBroken
+  - Bushes
+  - bear
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BG
+  - MG
+  - floor
+  - Player
+  - Trees
+  - DestroyOnExit
+  - Effect
+  - DeteckBroken
+  - Spell
+  - Bushes
+  - Bear
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 2017181869
+    locked: 0
+  - name: MG
+    uniqueID: 242839805
+    locked: 0
+  - name: Trees
+    uniqueID: 3536645485
+    locked: 0
+  - name: floor
+    uniqueID: 1993350341
+    locked: 0
+  - name: Player
+    uniqueID: 4146597599
+    locked: 0
+  - name: Effect
+    uniqueID: 3674799113
+    locked: 0
+  - name: Bushes
+    uniqueID: 1898966965
+    locked: 0
