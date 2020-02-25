@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3775568771149399652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3775568771149399649}
+  - component: {fileID: 3775568771149399650}
+  - component: {fileID: 3775568771149399651}
+  - component: {fileID: 3775568771149399648}
+  m_Layer: 13
+  m_Name: DestroyAndCreate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3775568771149399649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775568771149399652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3775568771149399650
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775568771149399652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -11.392156, y: -0.017858982}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8569355, y: 10.740111}
+  m_EdgeRadius: 0
+--- !u!114 &3775568771149399651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775568771149399652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b33432fa7a93f144bc2a12d5a7714e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tands:
+  - {fileID: 4375105473883723482, guid: 2aa448516396785409ceb4664c69aa1b, type: 3}
+  - {fileID: 8383097632242358998, guid: 827cb11a11a29dd48abcf309347197c5, type: 3}
+  - {fileID: 4775569273996621590, guid: 7bd0b2318916a1d4287c587404e7328f, type: 3}
+  - {fileID: 6816393576147031571, guid: 3ac6442fa1377f740922a16e230e1d13, type: 3}
+  - {fileID: 4775569273996621590, guid: 7bd0b2318916a1d4287c587404e7328f, type: 3}
+  - {fileID: 6816393576147031571, guid: 3ac6442fa1377f740922a16e230e1d13, type: 3}
+  cam: {fileID: 3310072075670101809, guid: b5057967fe71317489a54c8747072b96, type: 3}
+  damage: 0.5
+--- !u!114 &3775568771149399648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775568771149399652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fc6638fd09f6141b00fe49d4cd7893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bushes:
+  - {fileID: 5905968399024254350, guid: ef88ff3a226436243a288dceb7732b8d, type: 3}
+  - {fileID: 170809927234710471, guid: fa8dc087746d6094099b6daba79e927a, type: 3}
+  - {fileID: 2617291943022810835, guid: a9ec9c0956e69bf428f8d8de5fca83a7, type: 3}
+  cam: {fileID: 3310072075670101809, guid: b5057967fe71317489a54c8747072b96, type: 3}

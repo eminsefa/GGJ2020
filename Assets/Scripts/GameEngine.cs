@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEngine : MonoBehaviour
 {
@@ -9,14 +10,16 @@ public class GameEngine : MonoBehaviour
     public delegate void OnGameStarted();
     public event OnGameStarted NotifyOnGameStartedObservers;
 
-    public GameObject player;
-    public UiController uiController;
-
-    public bool IsPlaying { get; private set; }
+    public int point ;
 
 
+
+    public bool IsPlaying { get; set; }
+    
+    
     void Start()
     {
+        
         if (instance == null)
         {
             instance = this;
@@ -24,8 +27,10 @@ public class GameEngine : MonoBehaviour
         }
         else if (instance != null)
         {
+
             Destroy(this);
         }
+        
     }
     
         
@@ -33,15 +38,25 @@ public class GameEngine : MonoBehaviour
     public void StartGame()
     {
         IsPlaying = true;
-        NotifyOnGameStartedObservers?.Invoke(); 
+        FindObjectOfType<ScrollingObject>().ScrollObjects();
+        NotifyOnGameStartedObservers?.Invoke();
     }
 
 
      public void GameOver()
      {
         IsPlaying = false;
-        uiController.ShowGameEndCanvas();   
-     }
+        GetComponent<UiController>().ShowGameEndCanvas();
+        FindObjectOfType<Player>().GetComponent<Animator>().SetTrigger("stopMoving");
+        
+    }
 
+    public void GetPoint()
+    {
+        point += 100;
+        FindObjectOfType<SliderController>().showScore();
+    }
+
+   
 
 }

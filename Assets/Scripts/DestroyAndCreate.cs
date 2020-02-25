@@ -25,7 +25,7 @@ public class DestroyAndCreate : MonoBehaviour
     
     public GameObject RandomSpawner()
     {
-        int i = Random.Range(0, 4);
+        int i = Random.Range(0, 6);
         return tands[i];
     }
 
@@ -61,12 +61,10 @@ public class DestroyAndCreate : MonoBehaviour
         Destroy(collision.gameObject);
 
         var pos = new Vector2(RandomRange(), 0);
-        // GameObject treesAndStones = Instantiate(RandomSpawner(), pos, Quaternion.identity);
 
         var go = Instantiate(RandomSpawner());
         go.transform.position = pos;
 
-        print("<color=olive>" + go.name + "</color>");
 
     }
 

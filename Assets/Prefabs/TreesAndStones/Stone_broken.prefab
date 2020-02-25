@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -7
+  difficultyTimer: 0
 --- !u!50 &5101398770151984182
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +168,7 @@ GameObject:
   - component: {fileID: 665213164949873042}
   - component: {fileID: 8498553531692072103}
   - component: {fileID: 7589158464304808024}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Body
   m_TagString: Broken
   m_Icon: {fileID: 0}
@@ -202,6 +203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repaired: {fileID: 21300000, guid: ab5f242837eb0ae48aa41ca62be70c7a, type: 3}
   parent: {fileID: 6816393576147031571}
+  repairSprites:
+  - {fileID: 8211087461070744796, guid: 953b38f9aeefb0e4f9105fc9cf72846e, type: 3}
+  - {fileID: 8966448342734447499, guid: 015783d2d950fdd46bbdb479476fb15e, type: 3}
+  - {fileID: 1843770656955194387, guid: ba479980d27f3454a9c4fd37f7d70278, type: 3}
 --- !u!60 &7589158464304808024
 PolygonCollider2D:
   m_ObjectHideFlags: 0

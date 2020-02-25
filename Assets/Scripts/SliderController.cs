@@ -2,35 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SliderController : MonoBehaviour
 {
     Slider sl;
     public GameObject fill;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text = GameEngine.instance.point.ToString();
         sl = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = GameEngine.instance.point.ToString();
     }
     public void TakeDamage(float damage)
     {
-        fill.GetComponent<Image>().fillAmount += damage;
-        if(fill.GetComponent<Image>().fillAmount >=1)
+        fill.GetComponent<Image>().fillAmount -= damage;
+        if(fill.GetComponent<Image>().fillAmount <=0)
         {
-            StartCoroutine(Restart());
+            GameEngine.instance.GameOver();
         }
     }
-    public IEnumerator Restart()
+    public void showScore()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
+        scoreText.text = GameEngine.instance.point.ToString();
     }
 }

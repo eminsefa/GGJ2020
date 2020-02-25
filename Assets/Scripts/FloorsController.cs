@@ -4,45 +4,32 @@ using UnityEngine;
 
 public class FloorsController : MonoBehaviour
 {
-    private BoxCollider2D collider;
+    private BoxCollider2D myCollider;
     private float horizontalLength;
     public Camera mainCamera;
-    private Rigidbody2D rb2d;
-    public float scrollSpeed = 5f;
+    
 
     public GameObject[] ground;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
         
-        collider = ground[0].GetComponent<BoxCollider2D>();
-        horizontalLength = collider.size.x;
-
-        GameEngine.instance.NotifyOnGameStartedObservers += ScrollObjects;
-    }
-
-    void OnDestroy()
-    {
-        GameEngine.instance.NotifyOnGameStartedObservers -= ScrollObjects;
-    }
-
-
-    private void ScrollObjects()
-    {
-        rb2d.velocity = new Vector2(scrollSpeed, 0);
+        myCollider = ground[0].GetComponent<BoxCollider2D>();
+        horizontalLength = myCollider.size.x;
 
     }
 
+   
     
     void Update()
     {
         if (IsGroundOutOfSight())
         {
             GenerateNextGround();
-
+            
         }
+       
 
     }
     private bool IsGroundOutOfSight()

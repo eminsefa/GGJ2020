@@ -5,20 +5,29 @@ using UnityEngine;
 public class ScrollingObject : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public float scrollSpeed = 5f;
-
+    public float scrollSpeed;
+    public float difficultyTimer;
+    float difficultySpeed;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         GameEngine.instance.NotifyOnGameStartedObservers += ScrollObjects;
 
+        
+        
+    }
+    void Update()
+    {
         if (GameEngine.instance.IsPlaying)
         {
             ScrollObjects();
         }
+        difficultyTimer += Time.deltaTime/5;
+        difficultySpeed = scrollSpeed - difficultyTimer ;
+        if (!GameEngine.instance.IsPlaying)
+            StopScroll();
     }
-
 
     void OnDestroy()
     {
@@ -26,9 +35,13 @@ public class ScrollingObject : MonoBehaviour
     }
 
 
-    void ScrollObjects()
+    public void ScrollObjects()
     {
-        rb2d.velocity = new Vector2(scrollSpeed, 0);
+        rb2d.velocity = new Vector2(difficultySpeed, 0);
+    }
+    public void StopScroll()
+    {
+        rb2d.velocity = Vector2.zero;
     }
 }
    

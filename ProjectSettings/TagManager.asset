@@ -10,6 +10,8 @@ TagManager:
   - DetectBroken
   - Bushes
   - bear
+  - GameEndCanvas
+  - RepairSprites
   layers:
   - Default
   - TransparentFX
@@ -30,8 +32,8 @@ TagManager:
   - Spell
   - Bushes
   - Bear
-  - 
-  - 
+  - BrokenBody
+  - RepairSprites
   - 
   - 
   - 

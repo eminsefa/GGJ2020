@@ -7,7 +7,6 @@ public class DetectBroken : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D collision)
     {
-        print("<color=green>" + collision.gameObject.name + "</color>");
 
         if(collision.tag=="Spell")
         {
@@ -16,6 +15,10 @@ public class DetectBroken : MonoBehaviour
         if (collision.tag == "bear")
         {
             GameEngine.instance.StartGame();
+        }
+        if(collision.tag=="Player")
+        {
+            FindObjectOfType<Player>().GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }

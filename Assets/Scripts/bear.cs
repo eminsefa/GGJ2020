@@ -8,6 +8,7 @@ public class bear : MonoBehaviour
     Animator anim;
 
 
+    public Canvas gameEndCanvas;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,26 +19,12 @@ public class bear : MonoBehaviour
     void Start()
     {        
         rb.velocity = new Vector2(5f, 0);
-        anim.Play("BearWalking");
-        StartCoroutine (EndGame());
-    }
-    IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(40f);
-        rb.velocity = new Vector2(-10f,0);
-        transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
-
-
-        anim.Play("Idle");
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag=="Spell")
-        {
-        GameEngine.instance.GameOver();
         anim.Play("BearRepair");
-            Destroy(collision.gameObject);
-        }
+        StartCoroutine (DestroyBear());
+    }
+    IEnumerator DestroyBear()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }
